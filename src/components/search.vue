@@ -1,7 +1,7 @@
 <template>
-  <div class=" container-fluid padding">
-    <h2>Search Song or Artist</h2>
-    <div class="form-row align-items-center justify-content-center">
+  <div class=" container-fluid padding-top">
+    <h2 >Search Song or Artist</h2>
+    <div class="form-row align-items-center justify-content-center padding-bottom">
       <div class="col-sm-3 my-1">
         <label class="sr-only" for="inlineFormInputName">Name</label>
         <input
@@ -32,7 +32,10 @@ export default {
 </script>
 
 <style scoped>
-.padding {
+.padding-top {
   margin-top: 150px;
+}
+.padding-bottom {
+  margin-top: 50px;
 }
 </style>

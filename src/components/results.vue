@@ -9,11 +9,17 @@
           <thead>
             <tr class="text-left">
               <th scope="col">Song Name</th>
+              <th scope="col">Artist</th>
+              <th scope="col">Play</th>
+              <th scope="col">Stop</th>
             </tr>
           </thead>
           <tbody v-for="song in playList" v-bind:key="song.id">
             <tr class="text-left">
-              <td>{{song}}</td>
+              <td>{{song.title}}</td>
+              <td>{{song.artist.name}}</td>
+              <td @click="playAudio(song.preview)">Play</td>
+              <td @click="stopAudio()">Stop</td>
             </tr>
           </tbody>
         </table>
@@ -85,7 +91,7 @@ export default {
       this.playingSong.pause();
     },
     addToPlaylist(song) {
-      this.playList.push(song.title);
+      this.playList.push(song);
     },
   },
   watch: {
