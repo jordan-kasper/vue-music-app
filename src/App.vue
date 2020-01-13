@@ -42,8 +42,10 @@ export default {
   methods: {
     searched(value) {
       this.search = value;
-      this.artistView = !this.artistView;
-      this.searchView = !this.searchView;
+      if (this.searchView === false) {
+        this.artistView = !this.artistView;
+        this.searchView = !this.searchView;
+      }
       this.$forceUpdate();
     },
     addToPlaylist(song) {
