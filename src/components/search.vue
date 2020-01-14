@@ -1,7 +1,9 @@
 <template>
   <div class=" container-fluid padding-top">
-    <h2 >Search Song or Artist</h2>
-    <div class="form-row align-items-center justify-content-center padding-bottom">
+    <h2>Search Song or Artist</h2>
+    <div
+      class="form-row align-items-center justify-content-center padding-bottom"
+    >
       <div class="col-sm-3 my-1">
         <label class="sr-only" for="inlineFormInputName">Name</label>
         <input
@@ -10,6 +12,7 @@
           id="inlineFormInputName"
           placeholder="Jane Doe"
           v-model="searchValue"
+          required
         />
       </div>
       <div class="col-auto my-1">
@@ -23,7 +26,17 @@
 
 <script>
 export default {
+  data() {
+    return {
+      searchValue: null,
+    };
+  },
+
   methods: {
+    /**
+     * Sending back search result app main
+     *
+     */
     searchedString() {
       this.$emit('searchResult', this.searchValue);
     },

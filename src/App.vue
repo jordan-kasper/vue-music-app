@@ -4,13 +4,24 @@
     <app-search @searchResult="searched"></app-search>
     <div class="container-fluid padding">
       <div class="row">
-        <app-results :result="search" v-show="searchView"
-        @songAdded="addToPlaylist" @artistLookup="viewArtist"></app-results>
+        <app-results
+          :result="search"
+          v-show="searchView"
+          @songAdded="addToPlaylist"
+          @artistLookup="viewArtist"
+        ></app-results>
+        <app-playlist :playList="playList" v-show="searchView"></app-playlist>
+      </div>
+
+      <div class="row justify-content-center">
         <app-artist v-show="artistView" :artist="artist"></app-artist>
-        <app-playlist :playList="playList"></app-playlist>
+        <app-artistsearch
+          v-show="artistView"
+          :artist="artist"
+          @songAdded="addToPlaylist"
+        ></app-artistsearch>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -20,6 +31,7 @@ import search from './components/search.vue';
 import results from './components/results.vue';
 import artist from './components/artist.vue';
 import playlist from './components/playlist.vue';
+import artistSearch from './components/artistSearch.vue';
 
 export default {
   name: 'app',
@@ -28,7 +40,7 @@ export default {
       search: null,
       playList: [],
       artistView: false,
-      searchView: true,
+      searchView: false,
       artist: null,
     };
   },
@@ -38,19 +50,44 @@ export default {
     appResults: results,
     appArtist: artist,
     appPlaylist: playlist,
+    appArtistsearch: artistSearch,
   },
   methods: {
+    /**
+     * Setting search data variable to the emitted value from search component
+     *
+     * @param {String} value the value returned from the search component
+     */
     searched(value) {
       this.search = value;
-      if (this.searchView === false) {
-        this.artistView = !this.artistView;
+      this.toggle();
+    },
+    /**
+     * Toggles the components for search view and artist view
+     *
+     */
+    toggle() {
+      if (this.searchView === false && this.artistView === false) {
         this.searchView = !this.searchView;
+      } else {
+        this.searchView = !this.searchView;
+        this.artistView = !this.artistView;
       }
       this.$forceUpdate();
     },
+    /**
+     * Adding selected song from the search view to the playlist
+     *
+     * @param {String} song the value from the search view to be added to playlist
+     */
     addToPlaylist(song) {
       this.playList.push(song);
     },
+    /**
+     * Setting artist variable to be passed to the artist view and toggling the views
+     *
+     * @param {String} value the value returned from the search component
+     */
     viewArtist(songArtist) {
       this.artistView = !this.artistView;
       this.searchView = !this.searchView;
@@ -70,6 +107,6 @@ export default {
   margin-top: 60px;
 }
 .padding {
-  margin-top: 100px;
+  margin-top: 70px;
 }
 </style>

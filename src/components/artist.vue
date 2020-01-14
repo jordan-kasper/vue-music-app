@@ -1,23 +1,26 @@
 <template>
   <div>
-    <div class="col-md-8 order-md-2 text-right">
-      <app-results :result="artistInfo.name"></app-results>
-    </div>
-    <div class="col-md-2 order-md-1 mb-4 text-left">
+    <div class="col-md-12 text-center padding-artist">
       <h4>Artist Info</h4>
-      <img :src="artistInfo.picture_medium" />
-      <h4>{{ artistInfo.name }}</h4>
-      <p>{{ artistInfo.tracklist }}</p>
-      <p>Number of Albums : {{ artistInfo.nb_album }}</p>
-      <p>Found on the Radio : {{ artistInfo.radio }}</p>
-      <a :href="artistInfo.share">Share Artist</a>
+      <br>
+      <img class="rounded-circle" :src="artistInfo.picture_medium" />
+      <br>
+      <br>
+      <br>
+      <div class="text-left padding-text">
+        <h4>{{ artistInfo.name }}</h4>
+        <br>
+        <p><a :href=artistInfo.tracklist>{{ artistInfo.name}} Top 50 Songs</a></p>
+        <p>Number of Albums : {{ artistInfo.nb_album }}</p>
+        <p>Found on the Radio : {{ artistInfo.radio }}</p>
+        <p><a :href="artistInfo.share">Share Artist</a></p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import results from './results.vue';
 
 export default {
   props: ['artist'],
@@ -29,6 +32,10 @@ export default {
   },
 
   methods: {
+    /**
+     * Axios API call to search for specific artist based off of ID
+     *
+     */
     artistQuery() {
       axios({
         method: 'GET',
@@ -58,9 +65,15 @@ export default {
     },
   },
   components: {
-    appResults: results,
   },
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.padding-artist {
+  margin-right: 70px;
+}
+.padding-text {
+    margin-left: 80px;
+}
+</style>
