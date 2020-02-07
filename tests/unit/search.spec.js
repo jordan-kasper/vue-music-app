@@ -17,6 +17,6 @@ describe('Search', () => {
     wrapper.setData({ searchValue: 'eminem' });
     const button = wrapper.find('button');
     button.trigger('click');
-    console.log(wrapper.emitted());
+    expect(wrapper.emitted().searchResult[0]).toEqual(['eminem']);
   });
 });
