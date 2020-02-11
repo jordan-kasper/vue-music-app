@@ -18,8 +18,8 @@
           <td @click="addToPlaylist(song)">{{ song.title }}</td>
           <td @click="toggleArtist(song.artist.id)">{{ song.artist.name }}</td>
           <td>{{ song.album.title }}</td>
-          <td @click="playAudio(song.preview)">Play</td>
-          <td @click="stopAudio()">Stop</td>
+          <td name = 'play' @click="playAudio(song.preview)">Play</td>
+          <td name = 'stop' @click="stopAudio()">Stop</td>
         </tr>
       </tbody>
     </table>

@@ -10,6 +10,6 @@ describe('Counter', () => {
 
   // it's also easy to check for the existence of elements
   it('Header loaded', () => {
-    expect(wrapper.name()).toBe('Header');
+    expect(wrapper).toMatchSnapshot();
   });
 });
