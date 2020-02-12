@@ -26,6 +26,7 @@
 
 <script>
 export default {
+  name: 'search',
   data() {
     return {
       searchValue: null,

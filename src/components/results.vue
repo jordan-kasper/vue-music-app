@@ -16,10 +16,10 @@
         <tr class="text-left">
           <td>O</td>
           <td @click="addToPlaylist(song)">{{ song.title }}</td>
-          <td @click="toggleArtist(song.artist.id)">{{ song.artist.name }}</td>
+          <td id="artist" @click="toggleArtist(song.artist.id)">{{ song.artist.name }}</td>
           <td>{{ song.album.title }}</td>
-          <td name = 'play' @click="playAudio(song.preview)">Play</td>
-          <td name = 'stop' @click="stopAudio()">Stop</td>
+          <td @click="playAudio(song.preview)">Play</td>
+          <td @click="stopAudio()">Stop</td>
         </tr>
       </tbody>
     </table>
@@ -30,6 +30,7 @@
 import axios from 'axios';
 
 export default {
+  name: 'search',
   props: ['result'],
 
   data() {

@@ -57,59 +57,21 @@ describe('Results.vue', () => {
                 type: 'album',
               },
             },
-            {
-              id: 1109731,
-              readable: true,
-              title: 'Lose Yourself',
-              title_short: 'Lose Yourself',
-              title_version: '',
-              link: 'https://www.deezer.com/track/1109731',
-              duration: 326,
-              rank: 985755,
-              explicit_lyrics: true,
-              explicit_content_lyrics: 1,
-              explicit_content_cover: 0,
-              preview:
-                'https://cdns-preview-1.dzcdn.net/stream/c-13039fed16a173733f227b0bec631034-10.mp3',
-              artist: {
-                id: 13,
-                link: 'https://www.deezer.com/artist/13',
-                name: 'Eminem',
-                picture: 'https://api.deezer.com/artist/13/image',
-                picture_big:
-                  'https://cdns-images.dzcdn.net/images/artist/0707267475580b1b82f4da20a1b295c6/500x500-000000-80-0-0.jpg',
-                picture_medium:
-                  'https://cdns-images.dzcdn.net/images/artist/0707267475580b1b82f4da20a1b295c6/250x250-000000-80-0-0.jpg',
-                picture_small:
-                  'https://cdns-images.dzcdn.net/images/artist/0707267475580b1b82f4da20a1b295c6/56x56-000000-80-0-0.jpg',
-                picture_xl:
-                  'https://cdns-images.dzcdn.net/images/artist/0707267475580b1b82f4da20a1b295c6/1000x1000-000000-80-0-0.jpg',
-                tracklist: 'https://api.deezer.com/artist/13/top?limit=50',
-                type: 'artist',
-              },
-              album: {
-                cover: 'https://api.deezer.com/album/119606/image',
-                cover_big:
-                  'https://cdns-images.dzcdn.net/images/cover/e2b36a9fda865cb2e9ed1476b6291a7d/500x500-000000-80-0-0.jpg',
-                cover_medium:
-                  'https://cdns-images.dzcdn.net/images/cover/e2b36a9fda865cb2e9ed1476b6291a7d/250x250-000000-80-0-0.jpg',
-                cover_small:
-                  'https://cdns-images.dzcdn.net/images/cover/e2b36a9fda865cb2e9ed1476b6291a7d/56x56-000000-80-0-0.jpg',
-                cover_xl:
-                  'https://cdns-images.dzcdn.net/images/cover/e2b36a9fda865cb2e9ed1476b6291a7d/1000x1000-000000-80-0-0.jpg',
-                id: 119606,
-                title: 'Curtain Call: The Hits',
-                tracklist: 'https://api.deezer.com/album/119606/tracks',
-                type: 'album',
-              },
-            },
           ],
         };
       },
     });
   });
 
-  it('Testing data', () => {
-    expect(wrapper.vm.songs).toHaveLength(2);
+  it('Testing play/stop button clicks', () => {
+
+  });
+  it('Testing artist emit', () => {
+    wrapper.vm.$emit('toggleArtist', 'eminem');
+    expect(wrapper.emitted().toggleArtist[0]).toEqual(['eminem']);
+  });
+  it('Testing Add to playlist emit', () => {
+    wrapper.vm.$emit('addToPlaylist', 'https://www.deezer.com/track/854914312');
+    expect(wrapper.emitted().addToPlaylist[0]).toEqual(['https://www.deezer.com/track/854914312']);
   });
 });

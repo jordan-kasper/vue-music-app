@@ -28,6 +28,7 @@
 
 <script>
 export default {
+  name: 'playlist',
   props: ['playList'],
   methods: {
     deleteSong(song) {

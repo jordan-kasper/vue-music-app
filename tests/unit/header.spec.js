@@ -4,12 +4,12 @@
 import { shallowMount } from '@vue/test-utils';
 import Header from '../../src/components/header.vue';
 
-describe('Counter', () => {
+describe('header.vue', () => {
   // Now mount the component and you have the wrapper
   const wrapper = shallowMount(Header);
 
   // it's also easy to check for the existence of elements
   it('Header loaded', () => {
-    expect(wrapper).toMatchSnapshot();
+    expect(wrapper.name()).toBe('Header');
   });
 });

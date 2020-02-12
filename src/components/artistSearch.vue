@@ -33,6 +33,7 @@
 import axios from 'axios';
 
 export default {
+  name: 'artistView',
   props: ['artist'],
 
   data() {
