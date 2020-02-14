@@ -67,11 +67,11 @@ describe('Results.vue', () => {
 
   });
   it('Testing artist emit', () => {
-    wrapper.vm.$emit('toggleArtist', 'eminem');
-    expect(wrapper.emitted().toggleArtist[0]).toEqual(['eminem']);
+    wrapper.vm.toggleArtist('eminem');
+    expect(wrapper.emitted().artistLookup[0]).toEqual(['eminem']);
   });
   it('Testing Add to playlist emit', () => {
-    wrapper.vm.$emit('addToPlaylist', 'https://www.deezer.com/track/854914312');
-    expect(wrapper.emitted().addToPlaylist[0]).toEqual(['https://www.deezer.com/track/854914312']);
+    wrapper.vm.addToPlaylist('https://www.deezer.com/track/854914312');
+    expect(wrapper.emitted().songAdded[0]).toEqual(['https://www.deezer.com/track/854914312']);
   });
 });
