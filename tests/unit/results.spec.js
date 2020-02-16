@@ -64,7 +64,8 @@ describe('Results.vue', () => {
   });
 
   it('Testing play/stop button clicks', () => {
-
+    const button = wrapper.find('button');
+    expect(button.exists()).toBe(true);
   });
   it('Testing artist emit', () => {
     wrapper.vm.toggleArtist('eminem');

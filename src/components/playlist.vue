@@ -15,11 +15,30 @@
       </thead>
       <tbody v-for="song in playList" v-bind:key="song.id">
         <tr class="text-left">
-          <td @click="deleteSong(song)">X</td>
+          <td @click="deleteSong(song)">
+            <b-icon icon="x-circle" scale="2" variant="danger"> </b-icon>
+          </td>
           <td>{{ song.title }}</td>
           <td>{{ song.artist.name }}</td>
-          <td @click="playAudio(song.preview)">Play</td>
-          <td @click="stopAudio()">Stop</td>
+          <td @click="playAudio(song.preview)">
+            <button type="button" class="btn btn-outline-secondary">
+              <b-icon
+                icon="play-fill"
+                style="width: 30px;
+          height: 30px;"
+                variant="info"
+              ></b-icon>
+            </button>
+          </td>
+          <td @click="stopAudio()">
+            <button type="button" class="btn btn-outline-secondary">
+              <b-icon
+                icon="stop-fill"
+                style="width: 30px; height: 30px;"
+                variant="info"
+              ></b-icon>
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
