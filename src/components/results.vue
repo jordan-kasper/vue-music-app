@@ -45,6 +45,8 @@
 
 <script>
 import axios from 'axios';
+import { BIcon } from 'bootstrap-vue';
+
 
 export default {
   name: 'search',
@@ -111,6 +113,9 @@ export default {
       deep: true,
       immediate: true,
     },
+  },
+  components: {
+    BIcon,
   },
 };
 </script>

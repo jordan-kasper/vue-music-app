@@ -5,7 +5,6 @@
         <table class="table">
           <thead>
             <tr class="text-left">
-              <th scope="col"> </th>
               <th scope="col">Song Name</th>
               <th scope="col">Artist</th>
               <th scope="col">Album</th>
@@ -16,12 +15,28 @@
           </thead>
           <tbody v-for="song in songs" v-bind:key="song.id">
             <tr class="text-left">
-              <td> O </td>
               <td @click="addToPlaylist(song)">{{song.title}}</td>
               <td @click="toggleArtist(song.artist.id)">{{song.artist.name}}</td>
               <td>{{song.album.title}}</td>
-              <td @click="playAudio(song.preview)">Play</td>
-              <td @click="stopAudio()">Stop</td>
+          <td @click="playAudio(song.preview)">
+            <button type="button" class="btn btn-outline-secondary">
+              <b-icon
+                icon="play-fill"
+                style="width: 30px;
+          height: 30px;"
+                variant="info"
+              ></b-icon>
+            </button>
+          </td>
+          <td @click="stopAudio()">
+            <button type="button" class="btn btn-outline-secondary">
+              <b-icon
+                icon="stop-fill"
+                style="width: 30px; height: 30px;"
+                variant="info"
+              ></b-icon>
+            </button>
+          </td>
 
             </tr>
           </tbody>
@@ -31,6 +46,7 @@
 
 <script>
 import axios from 'axios';
+import { BIcon } from 'bootstrap-vue';
 
 export default {
   name: 'artistView',
@@ -81,6 +97,9 @@ export default {
       deep: true,
       immediate: true,
     },
+  },
+  components: {
+    BIcon,
   },
 };
 </script>

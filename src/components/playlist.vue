@@ -15,7 +15,7 @@
       </thead>
       <tbody v-for="song in playList" v-bind:key="song.id">
         <tr class="text-left">
-          <td @click="deleteSong(song)">
+          <td name="delete" @click="deleteSong(song)">
             <b-icon icon="x-circle" scale="2" variant="danger"> </b-icon>
           </td>
           <td>{{ song.title }}</td>
@@ -46,6 +46,8 @@
 </template>
 
 <script>
+import { BIcon } from 'bootstrap-vue';
+
 export default {
   name: 'playlist',
   props: ['playList'],
@@ -61,6 +63,9 @@ export default {
     stopAudio() {
       this.playingSong.pause();
     },
+  },
+  components: {
+    BIcon,
   },
 };
 </script>
