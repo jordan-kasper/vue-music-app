@@ -4,9 +4,9 @@
     <table class="table">
       <thead>
         <tr class="text-left">
-          <th scope="col">Song Name</th>
-          <th scope="col">Artist</th>
-          <th scope="col">Album</th>
+          <th scope="col" >Song Name</th>
+          <th scope="col" >Artist</th>
+          <th scope="col" >Album</th>
           <th scope="col">Play</th>
           <th scope="col">Stop</th>
         </tr>
@@ -47,7 +47,6 @@
 import axios from 'axios';
 import { BIcon } from 'bootstrap-vue';
 
-
 export default {
   name: 'search',
   props: ['result'],
@@ -57,6 +56,8 @@ export default {
       songs: null,
       playingSong: null,
       playList: [],
+      currentSort: 'name',
+      currentSortDir: 'asc',
     };
   },
   methods: {
