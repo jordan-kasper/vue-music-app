@@ -82,8 +82,14 @@ export default {
       this.$emit('songAdded', (song));
     },
     playAudio(url) {
-      this.playingSong = new Audio(url);
-      this.playingSong.play();
+      if (this.playingSong === null) {
+        this.playingSong = new Audio(url);
+        this.playingSong.play();
+      } else {
+        this.stopAudio();
+        this.playingSong = new Audio(url);
+        this.playingSong.play();
+      }
     },
     stopAudio() {
       this.playingSong.pause();

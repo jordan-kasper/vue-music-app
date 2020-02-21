@@ -99,8 +99,14 @@ export default {
       this.$emit('artistLookup', artist);
     },
     playAudio(url) {
-      this.playingSong = new Audio(url);
-      this.playingSong.play();
+      if (this.playingSong === null) {
+        this.playingSong = new Audio(url);
+        this.playingSong.play();
+      } else {
+        this.stopAudio();
+        this.playingSong = new Audio(url);
+        this.playingSong.play();
+      }
     },
     stopAudio() {
       this.playingSong.pause();

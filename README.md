@@ -1,5 +1,8 @@
 # vue-music-app
 
+Simple music app using the deezerdevs-deezer API to look up songs and add them to a playlist.
+
+
 ## Project setup
 ```
 npm install
@@ -32,3 +35,9 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## Features to Add
+
+Suffle play
+Move songs in list
+Auto play song

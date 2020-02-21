@@ -42,7 +42,6 @@
         </tr>
       </tbody>
     </table>
-
   </div>
 </template>
 
@@ -52,6 +51,14 @@ import { BIcon } from 'bootstrap-vue';
 export default {
   name: 'playlist',
   props: ['playList'],
+  data() {
+    return {
+      sortKey: '',
+      // eslint-disable-next-line quote-props
+      sortSettings: [{ 'Name': true }, { 'Artist': true }],
+      desc: true,
+    };
+  },
   methods: {
     deleteSong(song) {
       const songIndex = this.playList.indexOf(song);
