@@ -17,10 +17,6 @@
 
 This is a vue.js project that was created using vue.js, axios, and bootstrap 4 to allow users to search songs based off the deezer API. It also allows you to add your songs to a playlist and look up the artist from searched songs.
 
-## Prerequisites
-
-[Node.js](https://nodejs.org/en/) (>=4.x, 8.x preferred), Npm version 4+(Yarn preferred), and [Git](https://git-scm.com/).
-
 ## Demo
 
 [Online Demo Page](https://blog.lovejade.cn/vue-boilerplate-template/)
