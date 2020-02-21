@@ -2,12 +2,6 @@
 
 <h1 align="center"><strong>Vue Music App</strong></h1>
 
-<div align="center">
-   <a href="https://twitter.com/intent/tweet?text=Cool:&url=https://github.com/nicejade/vue-boilerplate-template">
-    <img src="https://img.shields.io/twitter/url/https://github.com/nicejade/vue-boilerplate-template/blob/master/assets/images/logo.svg?style=for-the-badge" alt="twitter">
-  </a>
-</div>
-
 <br>
 
 <div align="center">
@@ -21,12 +15,6 @@
 </div>
 
 <br>
-
-<div align="center">
-  <strong>
-    <a rel="noreferrer noopener" target="_blank" href="https://jeffjade.com/2018/05/20/140-vue-webpack-boilerplate-template/">中文 WIKI</a>
-  </strong>
-</div>
 
 ## Goal and Philosophy
 
@@ -43,31 +31,37 @@ For how to build medium-sized (+) **VUE** projects, provide some reference based
 ## Usage
 
 ```
-git clone https://github.com/nicejade/vue-boilerplate-template (your-project-name)
-cd your-project-name
-npm install (npm i / yarn)
-npm start / npm run dev / yarn run dev
+git clone https://github.com/jordan-kasper/vue-music-app.git (vue-music-app)
+cd vue-music-app
+npm install 
+npm run serve 
 ```
 
-Go to http://localhost:8080/. If port 8080 is already in use on your machine, **the program will specify the available port (incremental) for you, for example, `8081` / `8082` ...**. Of course, you can temporarily replace the port using the following command:
+Go to http://localhost:8080/
 
-```
-PORT=8888 npm run dev
+Test App
+
+npm run test
 ```
 
-## Dependent plugin list
+npm run test:unit
+```
+
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
+
+### Lints and fixes files
+```
+npm run lint
+
+## Stack
 
 - vue2
-- vue-router
-- vuex
-- vue-i18n
 - axios
 - bootstrap
-- element-ui
-- lodash
-- ~~moment~~ dayjs
-- js-cookie
-- ... ...
+
 
 ## License
 
