@@ -5,18 +5,15 @@
 <br>
 
 <div align="center">
-  <a href="https://nodejs.org/en/">
-    <img src="https://img.shields.io/badge/node-%3E%3D%208.0.0-green.svg" alt="node version">
-  </a>
   <a href="https://github.com/nicejade/vue-boilerplate-template">
     <img src="https://img.shields.io/github/license/nicejade/vue-boilerplate-template.svg" alt="LICENSE">
   </a>
-  <a href="https://about.me/nicejade"><img src="https://img.shields.io/badge/Author-Jordan Kasper-%23a696c8.svg" alt="Author Jordan Kasper"></a>
+  <a href="https://jordan-kasper.github.io/"><img src="https://img.shields.io/badge/Author-Jordan Kasper-%23a696c8.svg" alt="Author Jordan Kasper"></a>
 </div>
 
 <br>
 
-## Goal and Philosophy
+## Description
 
 For how to build medium-sized (+) **VUE** projects, provide some reference based on past experience. **The latest Vue Boilerplate based on `vue-cli3` has been open source: [awesome-vue-cli3-example](https://github.com/nicejade/awesome-vue-cli3-example), If you pay attention to it, I believe it is very worthwhile** 🎉.
 
@@ -59,6 +56,7 @@ npm run test:e2e
 ### Lints and fixes files
 ```
 npm run lint
+```
 
 ## Stack
 
@@ -70,5 +68,3 @@ npm run lint
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
-
-Copyright (c) 2017-present, [nicejade](https://about.me/nicejade/).
