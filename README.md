@@ -15,7 +15,7 @@
 
 ## Description
 
-For how to build medium-sized (+) **VUE** projects, provide some reference based on past experience. **The latest Vue Boilerplate based on `vue-cli3` has been open source: [awesome-vue-cli3-example](https://github.com/nicejade/awesome-vue-cli3-example), If you pay attention to it, I believe it is very worthwhile** 🎉.
+This is a vue.js project that was created using vue.js, axios, and bootstrap 4 to allow users to search songs based off the deezer API. It also allows you to add your songs to a playlist and look up the artist from searched songs.
 
 ## Prerequisites
 
