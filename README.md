@@ -39,11 +39,15 @@ npm run serve
 
 Go to http://localhost:8080/
 
-Test App
+## Test App
 
+### Run test suit along with lint
+```
 npm run test
 ```
 
+### Run unit tests
+```
 npm run test:unit
 ```
 
