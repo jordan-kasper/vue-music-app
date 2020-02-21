@@ -55,44 +55,6 @@ Go to http://localhost:8080/. If port 8080 is already in use on your machine, **
 PORT=8888 npm run dev
 ```
 
->**Additional supplement**： You need to make sure that PORT is a command that can be executed on your machine .
-
-<details>
-<summary>More Command</summary>
-
-```
-npm run build
-```
-Equivalent execution `node build.js`, initiate a build project .
-
-```
-npm run build:dll
-```
-Equivalent execution `webpack --config build/webpack.dll.conf.js`, For more information see [webpack.DllPlugin](https://webpack.js.org/plugins/dll-plugin/).
-
-```
-npm run jarvis / yarn run jarvis
-```
-
-run [webpack-jarvis](https://github.com/zouhir/jarvis)(A very intelligent browser based Webpack dashboard)，In your browser open: localhost:1337 , you have it.
-
-![JARVIS for Webpack](https://raw.githubusercontent.com/nicejade/vue-boilerplate-template/master/static/img/JARVIS%20for%20Webpack.png)
-
-```bash
-npm run pretest
-```
-Using nodejs to build the local server: http://localhost:3000/ , do a simple pre test for the code after the package.
-
-```
-npm run analyz
-```
-
-Webpack plugin and CLI utility that represents bundle content as convenient interactive zoomable treemap. It will automatically open this address：http://localhost:8888/ .
-
-![webpack-bundle-analyzer](https://cloud.githubusercontent.com/assets/302213/20628702/93f72404-b338-11e6-92d4-9a365550a701.gif)
-
-</details>
-
 ## Dependent plugin list
 
 - vue2
@@ -106,53 +68,6 @@ Webpack plugin and CLI utility that represents bundle content as convenient inte
 - ~~moment~~ dayjs
 - js-cookie
 - ... ...
-
-## Operation request
-Your backend can return the following format data， it's better .
-```
-{
-  success: true,
-  message: 'err message content',
-  value: [
-    // Useful data
-  ]
-}
-```
-
-At the front end, you can handle the request like this：
-```
-let params = {
-  // Interface required parameters
-}
-this.isLoading = true
-this.$apis.moduleName.getProfile(params).then(result => {
-  // Handle the correct data you received
-}).catch(error => {
-  this.$message.error(`Error: ${error}`)
-}).fin(() => {
-  this.isLoading = false
-})
-```
-
-So considerate, Template has been helped to handle the request uniformly, so you can be so easy to use, of course, you can change your own as needed in the `helper/ajax.js` file .
-
-## Links
-
-- [Example](https://github.com/nicejade/nicelinks-vue-client)
-- [**NICE LINKS**](https://nicelinks.site?from=github)
-- [About Me](https://about.me/nicejade/)
-- [First Blog](https://jeffjade.com)
-- [Second Blog](https://blog.lovejade.cn/)
-- [Weibo](http://weibo.com/jeffjade)
-- [ZhiHu](https://www.zhihu.com/people/yang-qiong-pu/)
-- [SegmentFault](https://segmentfault.com/u/jeffjade)
-- [JianShu](http://www.jianshu.com/u/9aae3d8f4c3d)
-- [Twitter](https://twitter.com/jeffjade2)
-- [Facebook](https://www.facebook.com/yang.gang.jade)
-
-## Writing
-
-See the example in the boilerplate template. Or An [example](https://github.com/nicejade/nicelinks-vue-client) that has been applied, Online address: https://nicelinks.site.
 
 ## License
 
