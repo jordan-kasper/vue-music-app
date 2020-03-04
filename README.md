@@ -19,7 +19,7 @@ This is a vue.js project that was created using vue.js, axios, and bootstrap 4 t
 
 ## Demo
 
-[Online Demo Page](https://blog.lovejade.cn/vue-boilerplate-template/)
+[Online Demo Page](https://unruffled-meninsky-2efddb.netlify.com/)
 
 ## Usage
 
