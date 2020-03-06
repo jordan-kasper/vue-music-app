@@ -13,10 +13,16 @@
           placeholder="Jane Doe"
           v-model="searchValue"
           required
+          data-cy="search"
         />
       </form>
       <div class="col-auto my-1">
-        <button class="btn btn-primary" type="submit" v-on:click="searchedString">
+        <button
+          class="btn btn-primary"
+          type="submit"
+          v-on:click="searchedString"
+          data-cy="submit"
+        >
           Search Music
         </button>
       </div>

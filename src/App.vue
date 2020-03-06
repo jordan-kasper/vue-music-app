@@ -92,19 +92,6 @@ export default {
       this.artist = songArtist;
     },
   },
-  watch: {
-    playList: {
-      handler() {
-        localStorage.setItem('playList', JSON.stringify(this.playList));
-      },
-      deep: true,
-    },
-  },
-  mounted() {
-    if (localStorage.getItem('playList')) {
-      this.playList = JSON.parse(localStorage.getItem('playList'));
-    }
-  },
 };
 </script>
 

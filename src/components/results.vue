@@ -4,9 +4,9 @@
     <table class="table">
       <thead>
         <tr class="text-left">
-          <th scope="col" >Song Name</th>
-          <th scope="col" >Artist</th>
-          <th scope="col" >Album</th>
+          <th scope="col">Song Name</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Album</th>
           <th scope="col">Play</th>
           <th scope="col">Stop</th>
         </tr>
@@ -120,6 +120,17 @@ export default {
       deep: true,
       immediate: true,
     },
+    songs: {
+      handler() {
+        localStorage.setItem('songs', JSON.stringify(this.songs));
+      },
+      deep: true,
+    },
+  },
+  mounted() {
+    if (localStorage.getItem('songs')) {
+      this.songs = JSON.parse(localStorage.getItem('songs'));
+    }
   },
   components: {
     BIcon,

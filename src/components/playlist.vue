@@ -3,7 +3,7 @@
     <h4 class="d-flex justify-content-between align-items-center">
       <span>Playlist</span>
     </h4>
-    <table class="table">
+    <table class="table" data-cy="playlist">
       <thead>
         <tr class="text-left">
           <th scope="col"></th>
