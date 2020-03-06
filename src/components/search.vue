@@ -4,7 +4,7 @@
     <div
       class="form-row align-items-center justify-content-center padding-bottom"
     >
-      <div class="col-sm-3 my-1">
+      <form class="col-sm-3 my-1 form-group">
         <label class="sr-only" for="inlineFormInputName">Name</label>
         <input
           type="text"
@@ -14,9 +14,9 @@
           v-model="searchValue"
           required
         />
-      </div>
+      </form>
       <div class="col-auto my-1">
-        <button class="btn btn-primary" @click="searchedString()">
+        <button class="btn btn-primary" type="submit" v-on:click="searchedString">
           Search Music
         </button>
       </div>

@@ -60,18 +60,16 @@ export default {
      */
     searched(value) {
       this.search = value;
-      this.toggle();
+      this.toggleSearch();
     },
     /**
      * Toggles the components for search view and artist view
      *
      */
-    toggle() {
-      if (this.searchView === false && this.artistView === false) {
+    toggleSearch() {
+      if (this.searchView === false) {
         this.searchView = !this.searchView;
-      } else {
-        this.searchView = !this.searchView;
-        this.artistView = !this.artistView;
+        this.artistView = false;
       }
       this.$forceUpdate();
     },
