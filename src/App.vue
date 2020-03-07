@@ -14,7 +14,7 @@
       </div>
 
       <div class="row justify-content-center">
-        <app-artist v-show="artistView" :artist="artist"></app-artist>
+        <app-artist v-show="artistView" :artist="artist" @toggleArtist="toggleSearch"></app-artist>
         <app-artistsearch
           v-show="artistView"
           :artist="artist"
@@ -91,6 +91,19 @@ export default {
       this.searchView = !this.searchView;
       this.artist = songArtist;
     },
+  },
+  watch: {
+    playList: {
+      handler() {
+        localStorage.setItem('playList', JSON.stringify(this.playList));
+      },
+      deep: true,
+    },
+  },
+  mounted() {
+    if (localStorage.getItem('playList')) {
+      this.playList = JSON.parse(localStorage.getItem('playList'));
+    }
   },
 };
 </script>

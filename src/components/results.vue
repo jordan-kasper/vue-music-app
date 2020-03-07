@@ -11,7 +11,7 @@
           <th scope="col">Stop</th>
         </tr>
       </thead>
-      <tbody v-for="song in songs" v-bind:key="song.id">
+      <tbody v-for="song in songsList" v-bind:key="song.id">
         <tr class="text-left">
           <td @click="addToPlaylist(song)">{{ song.title }}</td>
           <td id="artist" @click="toggleArtist(song.artist.id)">
@@ -53,7 +53,7 @@ export default {
 
   data() {
     return {
-      songs: null,
+      songsList: null,
       playingSong: null,
       playList: [],
       currentSort: 'name',
@@ -79,7 +79,7 @@ export default {
           q: result,
         },
       }).then((response) => {
-        this.songs = response.data.data;
+        this.songsList = response.data.data;
       });
     },
     /**
@@ -120,16 +120,16 @@ export default {
       deep: true,
       immediate: true,
     },
-    songs: {
+    songsList: {
       handler() {
-        localStorage.setItem('songs', JSON.stringify(this.songs));
+        localStorage.setItem('songsList', JSON.stringify(this.songsList));
       },
       deep: true,
     },
   },
   mounted() {
-    if (localStorage.getItem('songs')) {
-      this.songs = JSON.parse(localStorage.getItem('songs'));
+    if (localStorage.getItem('songsList')) {
+      this.songsList = JSON.parse(localStorage.getItem('songsList'));
     }
   },
   components: {

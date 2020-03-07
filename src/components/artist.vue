@@ -14,6 +14,7 @@
         <p>Number of Albums : {{ artistInfo.nb_album }}</p>
         <p>Found on the Radio : {{ artistInfo.radio }}</p>
         <p><a :href="artistInfo.share">Share Artist</a></p>
+        <button @click="toggleResults()" data-cy=return>Back to Song List</button>
       </div>
     </div>
   </div>
@@ -53,6 +54,9 @@ export default {
       }).then((response) => {
         this.artistInfo = response.data;
       });
+    },
+    toggleResults() {
+      this.$emit('toggleArtist');
     },
   },
 

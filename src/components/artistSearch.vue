@@ -13,7 +13,7 @@
 
             </tr>
           </thead>
-          <tbody v-for="song in songs" v-bind:key="song.id">
+          <tbody v-for="song in artistSongs" v-bind:key="song.id">
             <tr class="text-left">
               <td @click="addToPlaylist(song)">{{song.title}}</td>
               <td @click="toggleArtist(song.artist.id)">{{song.artist.name}}</td>
@@ -54,7 +54,7 @@ export default {
 
   data() {
     return {
-      songs: null,
+      artistSongs: null,
       playingSong: null,
       playList: [],
     };
@@ -70,7 +70,7 @@ export default {
         // eslint-disable-next-line prefer-template
         url: 'https://cors-anywhere.herokuapp.com/https://api.deezer.com/artist/' + this.artist + '/top?limit=50',
       }).then((response) => {
-        this.songs = response.data.data;
+        this.artistSongs = response.data.data;
       });
     },
     /**
@@ -103,6 +103,17 @@ export default {
       deep: true,
       immediate: true,
     },
+    artistSongs: {
+      handler() {
+        localStorage.setItem('artistSongs', JSON.stringify(this.artistSongs));
+      },
+      deep: true,
+    },
+  },
+  mounted() {
+    if (localStorage.getItem('artistSongs')) {
+      this.artistSongs = JSON.parse(localStorage.getItem('artistSongs'));
+    }
   },
   components: {
     BIcon,

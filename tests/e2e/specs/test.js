@@ -30,7 +30,7 @@ describe('Music Search App Test Suite', () => {
         .eq(3)
         .click();
 
-      // Plays the song in playlist
+      // Stops the song in playlist
       cy.get('[data-cy="playlist"]')
         .find('tr>td')
         .eq(4)
@@ -46,6 +46,8 @@ describe('Music Search App Test Suite', () => {
       cy.get('tr>td')
         .eq(1)
         .click();
+      // returns back to song page
+      cy.get('[data-cy=return]').click();
     });
   });
 });
