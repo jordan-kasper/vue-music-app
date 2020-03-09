@@ -101,7 +101,6 @@ export default {
         this.searchQuery(this.result);
       },
       deep: true,
-      immediate: true,
     },
     artistSongs: {
       handler() {

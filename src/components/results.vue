@@ -118,7 +118,6 @@ export default {
         this.searchQuery(this.result);
       },
       deep: true,
-      immediate: true,
     },
     songsList: {
       handler() {
