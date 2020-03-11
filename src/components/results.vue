@@ -4,20 +4,40 @@
     <table class="table">
       <thead>
         <tr class="text-left">
+          <th scope="col"></th>
           <th scope="col">Song Name</th>
           <th scope="col">Artist</th>
           <th scope="col">Album</th>
+          <th scope="col">Artist Info</th>
           <th scope="col">Play</th>
           <th scope="col">Stop</th>
         </tr>
       </thead>
       <tbody v-for="song in songsList" v-bind:key="song.id">
         <tr class="text-left">
-          <td @click="addToPlaylist(song)">{{ song.title }}</td>
-          <td id="artist" @click="toggleArtist(song.artist.id)">
+          <td @click="addToPlaylist(song)">
+              <b-icon
+                icon="plus"
+                style="width: 30px;
+          height: 30px;"
+                variant="info"
+              ></b-icon>
+          </td>
+          <td>{{ song.title }}</td>
+          <td id="artist">
             {{ song.artist.name }}
           </td>
           <td>{{ song.album.title }}</td>
+          <td id="artist" @click="toggleArtist(song.artist.id)">
+            <button type="button" class="btn btn-outline-secondary">
+              <b-icon
+                icon="info"
+                style="width: 30px;
+          height: 30px;"
+                variant="info"
+              ></b-icon>
+            </button>
+          </td>
           <td @click="playAudio(song.preview)">
             <button type="button" class="btn btn-outline-secondary">
               <b-icon
